@@ -21,5 +21,5 @@ async function trackFollowers(url) {
         await browser.close();
     }
 }
-// Example usage
+
 trackFollowers('https://www.threads.net/@');
