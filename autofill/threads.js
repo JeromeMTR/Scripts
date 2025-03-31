@@ -58,4 +58,4 @@ async function scrapeFollowers(url) {
 }
 
 // Example usage
-scrapeFollowers('https://www.threads.net/@annalimboran');
+scrapeFollowers('https://www.threads.net/@');
