@@ -9,8 +9,6 @@ async function loginToThreads(page, username, password) {
         await page.type('input[autocomplete="current-password"]', password, { delay: 100 });
         await page.click('text=Log in');
 
-
-
         await page.waitForNavigation({ waitUntil: 'networkidle2' });
         console.log('Logged in successfully!');
     } catch (error) {
