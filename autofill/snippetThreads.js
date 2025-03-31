@@ -29,10 +29,9 @@ function removeFollowings() {
                 if (followingButton && followingButton.textContent.includes('Following')) {
                     // Click the "Following" button
                     followingButton.click();
-                    return followingButton;
                     // Wait for the "Unfollow" confirmation button and click it
                     setTimeout(() => {
-                        const unfollowButton = document.querySelector('text=Unfollow'); // Replace with the actual class
+                        const unfollowButton = document.querySelector('div[class="x1sxyh0 xurb0ha x1vjfegm"]'); // Replace with the actual class
                         if (unfollowButton) {
                             unfollowButton.click();
                             console.log(`Unfollowed: ${name}`);
