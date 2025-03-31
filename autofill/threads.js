@@ -56,4 +56,4 @@ async function scrapeFollowers(url) {
 }
 
 // Example usage
-scrapeFollowers('https://www.threads.net/@test1');
+scrapeFollowers('https://www.threads.net/@tester');
