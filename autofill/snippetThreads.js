@@ -5,14 +5,15 @@ function trackList() {
     return arr
 }
 
-function removeFollowings() {
+async function removeFollowings() {
     followersList = [
     ]
     followingsList = trackList()
+    filter = followingsList.filter(f => !followersList.includes(f))
 
-    followingsList = followingsList.filter(f => !followersList.includes(f))
+    for (const name of filter) {
 
-    for (const name of followingsList) {
+        setTimeout(delayedFunction, 500);
         // Find the span element with the name
         const nameElement = Array.from(document.querySelectorAll('span[class="x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft"]')) // Replace with the actual class
             .find(el => el.textContent.trim() === name);
@@ -29,7 +30,9 @@ function removeFollowings() {
                 if (followingButton && followingButton.textContent.includes('Following')) {
                     // Click the "Following" button
                     followingButton.click();
+                    await new Promise(resolve => setTimeout(resolve, 500));
                     // Wait for the "Unfollow" confirmation button and click it
+
                     setTimeout(() => {
                         const unfollowButton = document.querySelector('div[class="x1sxyh0 xurb0ha x1vjfegm"]'); // Replace with the actual class
                         if (unfollowButton) {
@@ -37,10 +40,16 @@ function removeFollowings() {
                             console.log(`Unfollowed: ${name}`);
                         }
                     }, 500); // Adjust the timeout if needed
+
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+
                 }
+
             }
         }
     }
 
     return filter
 }
+
+removeFollowings()
